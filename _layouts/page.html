@@ -1,0 +1,9 @@
+<h1>This is a page that lists some data.</h1>
+
+<hr>
+
+{% for person in site.data.ppl %}
+  {{ person.name}}: {{person.occupation}} <br>
+{% endfor %}
+
+{{content}}

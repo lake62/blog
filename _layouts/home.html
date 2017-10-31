@@ -1,0 +1,22 @@
+# loops through all pages in the _posts folder
+<hr>
+
+{% for file in site.static_files %}
+  {% if file.image %}
+    This is a picture:
+    <img src="{{file.path}}" alt="{file.name}">
+  {% else %}
+    This is not a picture:
+    <object src="{{file.path}}" alt="{file.name}">
+  {% endif %}
+  // {{ file.path }}, {{ file.name }}, {{ file.basename }}, {{ file.extname }}<br>
+{% endfor %}
+
+<hr>
+{% for post in site.posts %}
+  {{post.title}} <br>
+  {{post.url}}
+  <li><a href="{{post.url}}">{{post.title}}</a></li>
+  <hr>
+
+{% endfor %}
